@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+        <style>
+            @font-face {
+                font-family: Segment7;
+                src: url("Segment7-4Gml.otf") format("opentype");
+            }
+
+            html {
+                background: black;
+                color: #44C553;
+                font-size: 600px;
+                font-family: 'Segment7';
+            }
+
+            #output {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                vertical-align: middle;
+                justify-content: center;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            window.setInterval(function(){
+                $.get('./output.txt',
+                    function(data){
+                        $('#output').html(data);
+                    }
+                );
+            },100);
+        </script>
+    </head>
+    <div id="output"></div>
+</html>
